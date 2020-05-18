@@ -1,0 +1,12 @@
+version: "2"
+services:
+  rs-Arbiter-1:
+    image: "mongo-start"
+    buiuld: ./rs-Arbiter-1
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./rs-Arbiter-1/database:data/db
+    depends_on:
+      - "rs-Master-2"
+      - "rs-Slave-3"
