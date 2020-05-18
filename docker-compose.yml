@@ -10,3 +10,19 @@ services:
     depends_on:
       - "rs-Master-2"
       - "rs-Slave-3"
+
+  rs-Master-2:
+    image: "mongo"
+    command: --replSet rs0 --smallfile --oplogSize 128
+    ports:
+      - "27018:27017"
+    volumes:
+      - ./rs-Master-2/database:data/db
+
+  rs-Slave-3:
+    image: "mongo"
+    command: --replSet rs0 --smallfile --oplogSize 128
+    ports:
+      - "27019:27017"
+    volumes:
+      - ./rs-Slave/database:data/db
