@@ -2,9 +2,21 @@
 
 Որպես Օպերացիոն համակարգ օգտագործում ենք CentOS 8
 
-## Install MongoDB
+## Install MongoDB CentOS 8
 
 ```bash
+$sudo nano /etc/yum.repos.d/mongodb-org.repo
+$vim or nano /etc/yum.repos.d/mongodb-org.repo
+    [mongodb-org-4.2]
+    name=MongoDB Repository
+    baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/
+    gpgcheck=1
+    enabled=1
+    gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+$sudo dnf install mongodb-org
+$sudo systemctl enable mongod --now
+$mongo
+
 
 ```
 
@@ -16,9 +28,9 @@ $docker ps
 ```
 
 ```sh
-/etc/mongod.conf #Configure ( Կարգավորումներ)
+$vim or nano /etc/mongod.conf #Configure ( Կարգավորումներ)
 
-/var/lib/mongo/{ master,slave,arbiter } #Create database folder ( Ստեզծել տվյալների բազայի գտնվելու վայրը )
+$cd /var/lib/mongo/ & $mkdir master, slave, arbiter  #Create database folder ( Ստեզծել տվյալների բազայի գտնվելու վայրը )
 
 $chown mongod:mongod /var/lib/mongo/{ master,slave,arbiter } #Permissions ( Իրավունքներ )
 
