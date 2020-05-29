@@ -30,7 +30,7 @@ $docker ps
 ```sh
 $vim or nano /etc/mongod.conf #Configure ( Կարգավորումներ)
 
-$cd /var/lib/mongo/ & $mkdir master, slave, arbiter  #Create database folder ( Ստեզծել տվյալների բազայի գտնվելու վայրը )
+$cd /var/lib/mongo/ & $mkdir master, slave, arbiter  #Create database folder ( Ստեզծել տվյալների բազայի ֆայլերի քարտացուցակ )
 
 $chown mongod:mongod /var/lib/mongo/{ master,slave,arbiter } #Permissions ( Իրավունքներ )
 
