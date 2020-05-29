@@ -36,4 +36,13 @@ services:
     image: "mrvautin/adminmongo"
     ports:
       - "1234:1234"
-#https://github.com/mrvautin/adminMongo
+    #https://github.com/mrvautin/adminMongo
+    web-app:
+      image: docker-node-express-mongoreplicaset-app
+      build: ./server
+      ports: -"3022:3023"
+      volume:
+        - ./server:/usr/src/app
+        - /usr/src/app/node_modules
+      # depends_on:
+      #   - "setup-rs"
