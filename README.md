@@ -1,19 +1,25 @@
 # High Availability
 
-VM(OS Centos-8) and install MongoDB
+Որպես Օպերացիոն համակարգ օգտագործում ենք CentOS 8
 
-```sh
-_ **/etc/mongod.conf** #Configure
+## Install MongoDB
 
-_ **/var/lib/mongo/{master,slave,arbiter}** #Create database folder
-
-_ **chown mongod:mongod /var/lib/mongo/{master,slave,arbiter}** #Permissions
+```bash
 
 ```
 
 ## Docker
 
 ```sh
-_ **docker-compose up rs-Arbiter-1 adminmongo ** or _**docker-compose up -d rs-Arbiter-1 adminmongo **
-_ **docker ps **
+$docker-compose up rs-Arbiter-1 adminmongo  or $docker-compose up -d rs-Arbiter-1 adminmongo
+$docker ps
+```
+
+```sh
+/etc/mongod.conf #Configure ( Կարգավորումներ)
+
+/var/lib/mongo/{ master,slave,arbiter } #Create database folder ( Ստեզծել տվյալների բազայի գտնվելու վայրը )
+
+$chown mongod:mongod /var/lib/mongo/{ master,slave,arbiter } #Permissions ( Իրավունքներ )
+
 ```
