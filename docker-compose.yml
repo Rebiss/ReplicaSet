@@ -26,3 +26,14 @@ services:
       - "27019:27017"
     volumes:
       - ./rs-Slave/database:data/db
+
+  run-rs:
+    image: "run-rs"
+    build: ./setup.sh
+    depends_on: -"mongo-Arbiter-1"
+
+  adminmongo:
+    image: "mrvautin/adminmongo"
+    ports:
+      - "1234:1234"
+#https://github.com/mrvautin/adminMongo
