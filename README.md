@@ -1,4 +1,4 @@
-## Not High Availability
+## High Availability
 
 VM(OS Centos-8) and install MongoDB
 
